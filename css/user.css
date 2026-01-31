@@ -1,3 +1,17 @@
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.social-icon .social-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin-left: 0.3rem;
+  transition: color 0.3s ease;
+}
+.social-icon:hover .social-text {
+  color: #1353d7;
+}
 .welcome-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 12px;
@@ -617,4 +631,102 @@
   color: #666;
   margin: 0;
   line-height: 1.8;
+}
+.categories-list,
+.tags-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.category-card,
+.tag-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.category-card:hover,
+.tag-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.category-name,
+.tag-name {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.category-name .category-link,
+.tag-name .category-link,
+.category-name .tag-link,
+.tag-name .tag-link {
+  color: #1353d7;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+.category-name .category-link:hover,
+.tag-name .category-link:hover,
+.category-name .tag-link:hover,
+.tag-name .tag-link:hover {
+  color: #096494;
+}
+.category-name .category-link i,
+.tag-name .category-link i,
+.category-name .tag-link i,
+.tag-name .tag-link i {
+  font-size: 1.5rem;
+}
+.category-count,
+.tag-count {
+  font-size: 1.4rem;
+  color: #999;
+  margin-bottom: 1rem;
+}
+.category-posts-preview,
+.tag-posts-preview {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+.category-post-link,
+.tag-post-link {
+  display: block;
+  color: #666;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+.category-post-link:hover,
+.tag-post-link:hover {
+  color: #1353d7;
+}
+.more-posts {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+.more-posts .more-link {
+  color: #1353d7;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.more-posts .more-link:hover {
+  color: #096494;
+  text-decoration: underline;
+}
+.no-categories,
+.no-tags {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #999;
+  font-size: 1.6rem;
 }
