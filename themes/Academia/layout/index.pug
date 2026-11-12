@@ -6,7 +6,10 @@ block content
         .welcome-section
             .welcome-content
                 h1.welcome-title 欢迎来到我的博客
-                p.welcome-subtitle 分享技术、生活与思考
+                p.welcome-subtitle= theme.welcome_label
+                ul.welcome-directions
+                    each name in theme.research_directions
+                        li= name
         // 最近更新区块
         .recent-updates
             h2.section-title

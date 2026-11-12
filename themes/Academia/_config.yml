@@ -2,7 +2,15 @@ favicon: /img/favicon.png
 # 头像。加载失败时回退到 loading_bg.flink
 avatar: /img/avatar.png
 author: 赵正
-author_bio: 热爱技术，分享生活与思考
+author_bio: "上海海洋大学计算机技术硕士在读｜机器学习、深度学习与强化学习在水资源调度中的应用"
+
+# 首页欢迎区。四个研究方向同一样式，没有先后。
+welcome_label: 研究方向
+research_directions:
+  - 多目标水库调度
+  - 水风光互补调度
+  - 跨境河流调度
+  - 水文预报
 
 since: 2020
 
