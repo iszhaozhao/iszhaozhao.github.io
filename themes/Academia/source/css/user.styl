@@ -36,6 +36,28 @@
   margin: 0;
   opacity: 0.95;
 }
+.welcome-directions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+}
+.welcome-section .welcome-directions li {
+  margin: 0;
+  padding: 0.45rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
 .section-title {
   font-size: 2.4rem;
   font-weight: 600;
@@ -392,6 +414,7 @@
   color: #666;
   font-size: 1.4rem;
   line-height: 1.6;
+  overflow-wrap: break-word;
 }
 @media (max-width: 768px) {
   .welcome-title {
@@ -399,6 +422,16 @@
   }
   .welcome-subtitle {
     font-size: 1.5rem;
+  }
+  .welcome-section {
+    padding: 3rem 1.4rem;
+  }
+  .welcome-section .welcome-directions {
+    gap: 0.6rem;
+  }
+  .welcome-section .welcome-directions li {
+    font-size: 1.4rem;
+    padding: 0.4rem 0.9rem;
   }
   .post-card {
     padding: 1.5rem;

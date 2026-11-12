@@ -6,6 +6,8 @@ html(lang=config.language)
         meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5")
         title= config.title
         meta(name="author" content=config.author)
+        if config.description
+            meta(name="description" content=config.description)
         != favicon_tag(config.favicon || theme.favicon || '/favicon.ico')
         each item in theme.CDN_USE.css
             link(rel='stylesheet', href=url_for(item))
