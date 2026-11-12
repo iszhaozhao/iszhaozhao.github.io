@@ -1,7 +1,9 @@
+# Hexo build output and local tooling. The site is published from CI, not from these files.
 node_modules/
 public/
 db.json
 .deploy*/
+.deploy_git/
 .DS_Store
 *.log
 .idea/
