@@ -1,0 +1,19 @@
+extends includes/layout
+
+block content
+    .page-full(itemscope itemtype='http://schema.org/CollectionPage')
+        h1.page-title
+            i.fas.fa-archive
+            |  文章归档
+        .archive-container
+            each year in archive_groups()
+                .archive-year-group
+                    h2.archive-year= year.year
+                    each month in year.months
+                        .archive-month-group
+                            h3.archive-month= month.label
+                            ul.archive-posts-list
+                                each post in month.posts
+                                    li.archive-post-item
+                                        time.archive-post-date= post.date.format('MM-DD')
+                                        a.archive-post-link(href=url_for(post.path))= post.title

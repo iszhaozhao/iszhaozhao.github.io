@@ -1,0 +1,57 @@
+favicon: /img/favicon.png
+# 头像。加载失败时回退到 loading_bg.flink
+avatar: /img/avatar.png
+author: 赵正
+author_bio: 热爱技术，分享生活与思考
+
+since: 2020
+
+# 顶部菜单。关于页保留尾部斜杠，其余与当前站点一致。
+menu:
+  首页: /
+  文章: /archives
+  分类: /categories
+  标签: /tags
+  关于: /about/
+
+loading_bg:
+  flink: /img/profile.png
+
+# 首页「最近更新」只展示 front-matter 里 academia: true 的文章。
+# 这是 Academia 主题的原有规则；当前线上首页因此只有 Hello World。
+# 改成 false 后，首页会列出全部文章。
+index_only_academia: true
+
+social:
+  enable: true
+social_links:
+  - icon: fab fa-github
+    url: https://github.com/iszhaozhao
+    text: iszhaozhao
+  - icon: fab fa-qq
+    url: "https://wpa.qq.com/msgrd?v=3&uin=1341638789&site=qq&menu=yes"
+    text: "1341638789"
+  - icon: fas fa-envelope
+    url: mailto:iszhaozheng@163.com
+    text: iszhaozheng@163.com
+
+e_social:
+  enable: false
+e_social_links: {}
+
+cv_dl:
+  enable: true
+  dir: /attaches/CV.pdf
+  description: My Detail CV.
+
+box_shadow:
+  enable: false
+
+CDN_USE:
+  css:
+    - /css/index.css
+    - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css
+  js:
+    - https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
+    - https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js
+    - /js/main.js

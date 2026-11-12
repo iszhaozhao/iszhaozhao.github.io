@@ -1,0 +1,21 @@
+extends includes/layout
+
+block content
+    .page-full
+        h1.page-title
+            i.fas.fa-tags
+            |  所有标签
+        .tags-list
+            each tag in ordered_tags()
+                .tag-card
+                    h2.tag-name
+                        a.tag-link(href=url_for(tag.path))
+                            i.fas.fa-tag
+                            |  #{tag.name}
+                    .tag-count #{tag.length} 篇文章
+                    .tag-posts-preview
+                        each post in preview_posts(tag.posts, 3)
+                            a.tag-post-link(href=url_for(post.path))= post.title
+                        if tag.length > 3
+                            .more-posts
+                                a.more-link(href=url_for(tag.path)) 查看更多 →
