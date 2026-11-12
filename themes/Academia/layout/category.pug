@@ -1,0 +1,25 @@
+extends includes/layout
+
+block content
+    - const posts = page.posts && page.posts.data ? page.posts.data : page.posts
+    .page-full(itemscope itemtype='http://schema.org/CollectionPage')
+        h1.page-title
+            i.fas.fa-folder-open
+            |  #{page.category}
+        .category-posts
+            each post in posts
+                article.post-item(itemscope itemtype='http://schema.org/Article')
+                    .post-item-header
+                        h2.post-item-title(itemprop='name headline')
+                            a.post-item-link(href=url_for(post.path))= post.title
+                        time.post-item-date(itemprop='datePublished' datetime=post.date.format('YYYY-MM-DD'))
+                            i.fas.fa-calendar-alt
+                            |  #{post.date.format('YYYY-MM-DD')}
+                    .post-item-excerpt(itemprop='description')= academia_excerpt(post, 203)
+                    .post-item-footer
+                        if post.tags && post.tags.length
+                            .post-item-tags
+                                each tag in post.tags.toArray()
+                                    a.post-item-tag(href=url_for(tag.path))
+                                        i.fas.fa-tag
+                                        |  #{tag.name}

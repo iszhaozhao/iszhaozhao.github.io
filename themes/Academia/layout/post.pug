@@ -1,0 +1,29 @@
+extends includes/layout
+
+block content
+    .page(itemscope itemtype='http://schema.org/Article')
+        article.post-article
+            header.post-header
+                h1.post-title(itemprop='name headline')= page.title
+                .post-meta
+                    time.post-date(itemprop='datePublished' datetime=page.date.format('YYYY-MM-DD'))
+                        i.fas.fa-calendar-alt
+                        |  #{page.date.format('YYYY-MM-DD')}
+                    if page.updated
+                        time.post-updated(itemprop='dateModified' datetime=page.updated.format('YYYY-MM-DD'))
+                            i.fas.fa-edit
+                            |  更新于 #{page.updated.format('YYYY-MM-DD')}
+                if page.tags && page.tags.length
+                    .post-tags
+                        each tag in page.tags.toArray()
+                            a.post-tag(href=url_for(tag.path))
+                                i.fas.fa-tag
+                                |  #{tag.name}
+                if page.categories && page.categories.length
+                    .post-categories
+                        each cat in post_categories(page)
+                            a.post-category(href=url_for(cat.path))
+                                i.fas.fa-folder
+                                |  #{cat.name}
+            .post-content(itemprop='articleBody')
+                != page.content

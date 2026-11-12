@@ -1,0 +1,21 @@
+extends includes/layout
+
+block content
+    .page-full
+        h1.page-title
+            i.fas.fa-folder-open
+            |  所有分类
+        .categories-list
+            each cat in ordered_categories()
+                .category-card
+                    h2.category-name
+                        a.category-link(href=url_for(cat.path))
+                            i.fas.fa-folder
+                            |  #{cat.name}
+                    .category-count #{cat.length} 篇文章
+                    .category-posts-preview
+                        each post in preview_posts(cat.posts, 3)
+                            a.category-post-link(href=url_for(post.path))= post.title
+                        if cat.length > 3
+                            .more-posts
+                                a.more-link(href=url_for(cat.path)) 查看更多 →
