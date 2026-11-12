@@ -60,14 +60,6 @@ npx hexo server
 
 不要再用 `hexo deploy` 把生成出来的 HTML 提交回仓库根目录。
 
-## 合并之后要改的一项 Pages 设置
+## 发布来源
 
-现在站点是从 `main` 分支的根目录发布的。这次改动**没有删掉**已经生成好的 HTML，所以先合并不会让线上站点挂掉。
-
-请按下面的顺序操作：
-
-1. 合并这个拉取请求。线上仍由 `main` 根目录里的旧静态文件提供，页面和现在一样。Actions 里「Deploy Hexo site to GitHub Pages」的部署步骤这时多半会失败，因为 Pages 的发布来源还不是 GitHub Actions。这是预期情况。
-2. 打开仓库的 **Settings → Pages → Build and deployment**，把 **Source** 从 **Deploy from a branch**（分支 `main`，目录 `/ (root)`）改成 **GitHub Actions**。
-3. 打开 **Actions**，找到刚才失败的那次运行，选择 **Re-run failed jobs**。也可以再往 `main` 推一次。工作流成功之后，线上会换成这次生成的 `public/`。
-4. 打开 <https://iszhaozhao.github.io>，确认首页、归档、分类、标签、关于、文章和 `/attaches/CV.pdf` 都正常。
-5. 第 3 步成功之后，可以再提交一次，删掉仓库根目录里旧的生成文件：`index.html`、`2023/`、`2026/`、`about/`、`archives/`、`categories/`、`tags/`、`css/`、`js/`、`img/`、`attaches/`。这些文件已经不再被 Pages 使用。**不要在第 2 步完成之前删除它们。** 来源仍是 `main` 分支时，下一次推送会把没有 `index.html` 的仓库发布出去，站点会打不开。
+仓库 **Settings → Pages → Build and deployment** 的 **Source** 已经是 **GitHub Actions**。线上站点由工作流生成的 `public/` 发布，仓库里不再保存这些生成结果。`public/`、`node_modules/` 和 `db.json` 都在 `.gitignore` 里，不要把它们提交回来。
